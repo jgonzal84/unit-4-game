@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Star Wars | The Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-    <p>Hi</p>
+    <h1 class="starFont">STAR WARS : THE GAME</h1>
+     <h2>
+        <p>Choose Your Player</p>
+     </h2>
+    <div class="charBox" , class="grow", class="grow:hover">
+        <p>Luke Skywalker</p>
+        <img id="iconPlayerImg" src="./assets/images/star-wars-luke-skywalker-wallpaper-11537517.jpg" alt="picture of luke skywalker with lightsaber">
+        <p class="health">Hit Points</p>
+    </div>
+    <div class="charBox" , class="enlarge-onhover">
+        <p>Chewbacca</p>
+        <img id="iconPlayerImg" src="./assets/images/star-wars-episode-viii-the-last-jedi-chewbacca-bowcaster_a-G-15278820-0.jpg" alt="picture of chewbacca with bowcaster">
+        <p id="chewbaccaHealth">Hit Points</p>
+    </div>
+    <div class="charBox" , class="enlarge-onhover">
+        <p>Boba Fett</p>
+        <img id="iconPlayerImg" src="./assets/images/BAN201305-2.jpg" alt="Photo of Boba Fett">
+        <p id="bobaHealth">Hit Points</p>
+    </div>
+    <div class="charBox" , class="enlarge-onhover">
+        <p>Yoda</p>
+        <img id="iconPlayerImg" src="./assets/images/24542163037_3eedb1814e_b.jpg" alt="cartoon picture of yoda with lightsaber">
+        <p id="yodaHealth">Hit Points</p>
+    </div>
+   
+    <div id = "opponentChooseText">
+        <p class = "opponentChangeText"></p>
+        <!-- here we dont want to populate the p tag because we want it to change to reflect the stage of the game the player is on. -->
+        <!-- i.e. "choose your first>second>last opponent" -->
+    </div>
+    <div id = "battleNarration">
+        <p></p>
+        <!-- here we would like to have a p that shows the things happening in real time. -->
+        <!-- how many points player has inflicted and how many received. -->
+    </div>
+
+
+
+    <script src="./assets/javascript/game.js"></script>
 </body>
+
 </html>
