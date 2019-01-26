@@ -5,12 +5,13 @@ html {
     -o-background-size: cover;
     background-size: cover;
     padding: 30px;
+    min-width: 1000px;
   }
 
 .starFont {
     
     color: rgb(249, 243, 52);
-    font-family: serif 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: serif 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
@@ -21,6 +22,19 @@ h1 {
 h2 {
     color: azure;
     margin-left: 30px;
+}
+
+button {
+    margin: 20px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: serif 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    background: red;
+    border-radius: 4px;
+    position: relative;
+    top: 60%
+
 }
 
 .iconPlayerImg {
@@ -39,27 +53,74 @@ h2 {
     text-align: center; 
     height: 200px;
     width: 150px;
-    border: 3px solid;
+    border: 5px solid;
     float: left;
-    -webkit-transition: width 2s, height 2s; /* Safari */
-    transition: width 2s, height 2s;
+    /* -webkit-transition: width 1s, height 1s; Safari */
+    /* transition: width 1s, height 1s; */
 }
 
 .charBox.selected {
-    width: 300px;
-    height: 300px;
+    height: 225px;
+    width: 185px;
+    background: rgb(96, 183,78);
+    -webkit-transition: width 1s, height 1s;
+    transition: width 1s, height 1s;
 }
 
+#character-select {
+    width: 350px;
+    position: absolute;
+    right: 50px;
+}
+
+#game-board {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left-column {
+    position: relative;
+    width: 500px;
+    float: left;
+}
+
+.right-column {
+    position: relative;
+    float: right;
+}
+
+#character-select.start {
+    width: 350px;
+    position: absolute;
+    right: 300px;
+}
+
+.opponentChangeText {
+    text-align: center;
+}
+
+/* .my-character {
+    height: 225px;
+    width: 185px;
+    background: rgb(96, 183,78);
+    -webkit-transition: width 1s, height 1s;
+    transition: width 1s, height 1s;
+} */
+
 .charBox.oppSelected {
-    width: 300px;
-    height: 300px;
-    background: red;
+    height: 225px;
+    width: 185px;
+    background: rgb(207, 160, 255);
 }
 
 .health{
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
 
 
 

@@ -12,25 +12,26 @@
 
 <body>
     <h1 class="starFont">STAR WARS : THE GAME</h1>
-     <h2>
-        <p>Choose Your Player</p>
-     </h2>
-     <div id="character-battle">
-            <div id="my-character"></div>
-            <div id="opponent"></div>
+    <h2>
+        <p class="opponentChangeText">Choose Your Player</p>
+    </h2>
+    <div id="game-board">
+        <div class="left-column">
+            <div id="character-battle">
+                <div id="my-character"></div>
+                <div id="opponent"></div>
+            </div>
+            <button id="attackButton" class="hidden">Attack!</button>
+            <div id="battleNarration">
+                <p></p>
+                <!-- thinking about maybe adding a narration box but might not be needed -->
+                <!-- here we would like to have a <p> that shows the things happening in real time. -->
+                <!-- something like how many points player has inflicted and how many received. -->
+            </div>
         </div>
-     <div id="character-select"></div>
-     
-   
-    <div id = "opponentChooseText">
-        <p class = "opponentChangeText"></p>
-        <!-- here we dont want to populate the p tag because we want it to change to reflect the stage of the game the player is on. -->
-        <!-- i.e. "choose your first>second>last opponent" -->
-    </div>
-    <div id = "battleNarration">
-        <p></p>
-        <!-- here we would like to have a p that shows the things happening in real time. -->
-        <!-- how many points player has inflicted and how many received. -->
+        <div class="right-column">
+            <div id="character-select" class="start"></div>
+        </div>
     </div>
 
 
