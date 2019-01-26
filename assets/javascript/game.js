@@ -1,12 +1,110 @@
+var myPlayer = null;
+var currentOpp = null;
+
+const playerDatabase = {
+    luke: {
+        "name": "Luke Skywalker",
+        "hp": 200,
+        "atk": 25,
+        "def": 25,
+        "imageUrl": "./assets/images/star-wars-luke-skywalker-wallpaper-11537517.jpg"
+    },
+    chewy: {
+        "name": "Chewbacca",
+        "hp": 250,
+        "atk": 20,
+        "def": 20,
+        "imageUrl": "./assets/images/star-wars-episode-viii-the-last-jedi-chewbacca-bowcaster_a-G-15278820-0.jpg"
+    },
+    boba: {
+        "name": "Boba Fett",
+        "hp": 250,
+        "atk": 20,
+        "def": 20,
+        "imageUrl": "./assets/images/BAN201305-2.jpg"
+    },
+    yoda: {
+        "name": "Yoda",
+        "hp": 250,
+        "atk": 20,
+        "def": 20,
+        "imageUrl": "./assets/images/24542163037_3eedb1814e_b.jpg"
+    }
+
+}
+
+/*
+<div class="charBox" data-value="luke">
+        <p>Luke Skywalker</p>
+        <img id="iconPlayerImg" src="./assets/images/star-wars-luke-skywalker-wallpaper-11537517.jpg" alt="picture of luke skywalker with lightsaber">
+        <p class="health">Hit Points</p>
+    </div>
+    <div class="charBox" data-value="chewy">
+        <p>Chewbacca</p>
+        <img class="iconPlayerImg" src="./assets/images/star-wars-episode-viii-the-last-jedi-chewbacca-bowcaster_a-G-15278820-0.jpg" alt="picture of chewbacca with bowcaster">
+        <p id="chewbaccaHealth">Hit Points</p>
+    </div>
+    <div class="charBox" data-value="boba">
+        <p>Boba Fett</p>
+        <img class="iconPlayerImg" src="./assets/images/BAN201305-2.jpg" alt="Photo of Boba Fett">
+        <p id="bobaHealth">Hit Points</p>
+    </div>
+    <div class="charBox" data-value="yoda">
+        <p>Yoda</p>
+        <img class="iconPlayerImg" src="./assets/images/24542163037_3eedb1814e_b.jpg" alt="cartoon picture of yoda with lightsaber">
+        <p id="yodaHealth">Hit Points</p>
+    </div>
+    */
+
+function createPlayerCard(playerId) {
+    var currentPlayer = playerDatabase[playerId]
+    var outerDiv = document.createElement('div');
+    outerDiv.className = 'charBox';
+    outerDiv.dataset.value = playerId;
+    var nameTitle = document.createElement('p');
+    nameTitle.innerText = currentPlayer.name;
+    var imgTag = document.createElement('img');
+    imgTag.className = 'iconPlayerImg';
+    imgTag.src = currentPlayer.imageUrl;
+    var hitPoints = document.createElement('p');
+    hitPoints.innerText = 'Hit Points: ' + currentPlayer.hp;
+    outerDiv.append(nameTitle);
+    outerDiv.append(imgTag);
+    outerDiv.append(hitPoints);
+    return outerDiv;
+}
+
+$("#character-select").append(createPlayerCard('luke'));
+$("#character-select").append(createPlayerCard('chewy'));
+$("#character-select").append(createPlayerCard('boba'));
+$("#character-select").append(createPlayerCard('yoda'));
+
 $(".charBox").click(function(){
-    $(this).animate({ 
+    if(myPlayer === null) {
+        myPlayer = this.dataset.value;
+        $(this).remove();
+        $("#my-character").append(createPlayerCard(myPlayer));
+
+        
+        // remove the class selected from all cards
+        $(".charBox").removeClass('selected');
+        // add the class selected to the clicked card
+        $(this).addClass('selected');
+    } else if(currentOpp === null && myPlayer !== this.dataset.value) {
+        currentOpp = this.dataset.value;
+        // remove the class selected from all cards
+        $(".charBox").removeClass('oppSelected');
+        // add the class selected to the clicked card
+        $(this).addClass('oppSelected');
+    }
+
+    
+    // - create a style in the css for selected and add an animate property
+    /* $(this).animate({ 
       width: 175,
       height: 235,
-    }, 750 );
-    
-  });
-
-
+    }, 750 ); */
+});
 
 
 //   need code to move other characters to right side of screen in a column after player has chosen character.
