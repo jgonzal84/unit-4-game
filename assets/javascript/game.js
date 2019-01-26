@@ -142,7 +142,7 @@ $('#attackButton').click(function(){
 //   need code to move other characters to right side of screen in a column after player has chosen character.
     // $("div").click(function () {
     //     $(this).show("slide", { direction: "right" }, 1000);
-    // }); --possible slide code--
+    // });
 //   then button to appear slowly after other characters move to the right.
 //   then under button we will need our box that will be direct the player from this point forward
 
